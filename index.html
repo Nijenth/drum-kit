@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive, beautifully designed JavaScript Drum Kit.">
+    <title>Neon Beats | Advanced Drum Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Canvases for visual effects -->
+    <canvas id="visualizer"></canvas>
+    <canvas id="particles"></canvas>
+
+    <main class="drum-kit-container">
+        <header class="header">
+            <h1>Neon Beats Studio</h1>
+            <p>Advanced Drum Kit with Web Audio API</p>
+        </header>
+
+        <!-- Controls Panel -->
+        <div class="controls-panel">
+            <div class="control-group">
+                <label>Sound Kit:</label>
+                <select id="kit-selector">
+                    <option value="acoustic">Acoustic (Original)</option>
+                    <option value="electronic">Deep Electronic (Pitch Shifted)</option>
+                    <option value="lofi">Lo-Fi (Filtered & Distorted)</option>
+                </select>
+            </div>
+
+            <div class="control-group metronome-controls">
+                <button id="metro-btn" class="btn">Metronome: OFF</button>
+                <input type="range" id="bpm-slider" min="60" max="200" value="120">
+                <span id="bpm-display">120 BPM</span>
+            </div>
+
+            <div class="control-group record-controls">
+                <button id="record-btn" class="btn record">🔴 Record</button>
+                <button id="play-record-btn" class="btn play" disabled>▶️ Play</button>
+                <button id="clear-record-btn" class="btn" disabled>⏹ Clear</button>
+            </div>
+        </div>
+
+        <div class="keys">
+            <div data-key="65" class="key" tabindex="0">
+                <kbd>A</kbd>
+                <span class="sound">clap</span>
+            </div>
+            <div data-key="83" class="key" tabindex="0">
+                <kbd>S</kbd>
+                <span class="sound">hihat</span>
+            </div>
+            <div data-key="68" class="key" tabindex="0">
+                <kbd>D</kbd>
+                <span class="sound">kick</span>
+            </div>
+            <div data-key="70" class="key" tabindex="0">
+                <kbd>F</kbd>
+                <span class="sound">openhat</span>
+            </div>
+            <div data-key="71" class="key" tabindex="0">
+                <kbd>G</kbd>
+                <span class="sound">boom</span>
+            </div>
+            <div data-key="72" class="key" tabindex="0">
+                <kbd>H</kbd>
+                <span class="sound">ride</span>
+            </div>
+            <div data-key="74" class="key" tabindex="0">
+                <kbd>J</kbd>
+                <span class="sound">snare</span>
+            </div>
+            <div data-key="75" class="key" tabindex="0">
+                <kbd>K</kbd>
+                <span class="sound">tom</span>
+            </div>
+            <div data-key="76" class="key" tabindex="0">
+                <kbd>L</kbd>
+                <span class="sound">tink</span>
+            </div>
+        </div>
+        
+        <div class="start-overlay" id="start-overlay">
+            <div class="start-message">
+                <h2>Ready to Make Some Noise?</h2>
+                <p>Click below to enable the Web Audio API and start playing!</p>
+                <button id="start-audio-btn" class="btn primary-btn">Initialize Studio</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
